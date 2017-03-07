@@ -105,5 +105,11 @@ public class Honeywell extends Activity {
         registerReceiver(mScanReceiver, filter);
     }
 
-
+	@Override
+	protected void onStart() {
+		super.onStart();
+		IntentFilter filter = new IntentFilter();
+		filter.addAction(SCAN_ACTION);
+		registerReceiver(mScanReceiver, filter);
+	}
 }
