@@ -36,8 +36,16 @@ import Honeywell from 'react-native-honeywellN43XX'
   }
   
   
+In your mainApplication.java
   
-  In your mainApplicationActivity.java
+  import io.stackworx.honeywell.Package;
+  
+  and
+  
+  new Package()
+  
+  
+In your mainActivity.java
   
   
 public class MainActivity extends ReactActivity {
@@ -62,7 +70,6 @@ public class MainActivity extends ReactActivity {
             Log.i("HONEY", "----codetype--" + temp);
             barcodeStr = new String(barocode, 0, barocodelen);
             Log.i("HONEY", barcodeStr);
-//            sm.stopScan();
         }
 
     };
@@ -71,9 +78,6 @@ public class MainActivity extends ReactActivity {
     protected void onPause() {
         // TODO Auto-generated method stub
         super.onPause();
-//        if(sm != null) {
-//            sm.stopScan();
-//        }
         unregisterReceiver(mScanReceiver);
     }
 
