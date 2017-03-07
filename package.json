@@ -1,0 +1,25 @@
+{
+  "name": "react-native-honeywellN43XX",
+  "version": "0.0.1",
+  "author": "Waldo Boshoff",
+  "private": false,
+  "license": "Unlicense",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sirwoetang/react-native-honeywellN43XX.git"
+  },
+  "homepage": "https://github.com/sirwoetang/react-native-honeywellN43XX",
+  "keywords": [
+    "react-native",
+    "android",
+    "library",
+    "honeywell"
+  ],
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "react-native": ">=0.38.0"
+  }
+}
