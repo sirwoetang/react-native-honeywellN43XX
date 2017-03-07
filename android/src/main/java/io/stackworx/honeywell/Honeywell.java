@@ -1,4 +1,4 @@
-package io.stackworx.honeywellLib;
+package io.stackworx.honeywell;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -7,13 +7,9 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.device.ScanDevice;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 
-public class MainActivity extends Activity {
+public class Honeywell extends Activity {
 	ScanDevice sm;
 	 private final static String SCAN_ACTION = "scan.rcv.message";
 	 private String barcodeStr;
@@ -42,57 +38,55 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
 		sm = new ScanDevice();
-		CheckBox ch = (CheckBox) findViewById(R.id.checkBox1);
 		if(sm.getOutScanMode()==1){
-			ch.setChecked(true);
+//			ch.setChecked(true);
 		}else{
-			ch.setChecked(false);
+//			ch.setChecked(false);
 		}
-		ch.setOnCheckedChangeListener(new OnCheckedChangeListener(){
+//		ch.setOnCheckedChangeListener(new OnCheckedChangeListener(){
+//
+//			@Override
+//			public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+//				// TODO Auto-generated method stub
+//				if(arg1){
+//					sm.setOutScanMode(1);   //Direct output to the text box
+//				}else{
+//					sm.setOutScanMode(0); //Receive the broadcast
+//				}
+//			}});
 
-			@Override
-			public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
-				// TODO Auto-generated method stub
-				if(arg1){
-					sm.setOutScanMode(1);   //Direct output to the text box
-				}else{
-					sm.setOutScanMode(0); //Receive the broadcast
-				}
-			}});
-
-		showScanResult=(EditText) findViewById(R.id.editText1);
+//		showScanResult=(EditText) findViewById(R.id.editText1);
 	}
 
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.openScanner:
-			System.out.println("openScanner = "+sm.getOutScanMode());
-			sm.openScan();
-			break;
-		case R.id.closeScanner:
-			sm.closeScan();
-			break;
-		case R.id.startDecode:
-			sm.startScan();
-			break;
-		case R.id.stopDecode:
-			sm.stopScan();
-			break;
-		case R.id.start_continue:
-			sm.setScanLaserMode(4);
-			break;
-		case R.id.stop_continue:
-			sm.setScanLaserMode(8);
-			break;
-		case R.id.close:
-			finish();
-			break;
-		default:
-			break;
-		}
-	}
+//	public void onClick(View v) {
+//		switch (v.getId()) {
+//		case R.id.openScanner:
+//			System.out.println("openScanner = "+sm.getOutScanMode());
+//			sm.openScan();
+//			break;
+//		case R.id.closeScanner:
+//			sm.closeScan();
+//			break;
+//		case R.id.startDecode:
+//			sm.startScan();
+//			break;
+//		case R.id.stopDecode:
+//			sm.stopScan();
+//			break;
+//		case R.id.start_continue:
+//			sm.setScanLaserMode(4);
+//			break;
+//		case R.id.stop_continue:
+//			sm.setScanLaserMode(8);
+//			break;
+//		case R.id.close:
+//			finish();
+//			break;
+//		default:
+//			break;
+//		}
+//	}
     @Override
     protected void onPause() {
         // TODO Auto-generated method stub
